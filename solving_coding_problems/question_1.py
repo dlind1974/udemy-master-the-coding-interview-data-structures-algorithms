@@ -88,6 +88,16 @@ def contains_common_items(array_1, array_2):
     return False
 
 
+def contains_common_items_simplified(array_1, array_2):
+    items_in_array_1 = set(array_1)
+
+    for array_2_item in array_2:
+        if array_2_item in items_in_array_1:
+            return True
+
+    return False
+
+
 if __name__ == "__main__":
 
     # Sorted arrays
@@ -117,3 +127,4 @@ if __name__ == "__main__":
     array_24 = ['z', 'y', 'x']
     print(contains_common_items(array_14, array_24))
     print(contains_common_items_for_sorted(sorted(array_14), sorted(array_24)))
+    print(contains_common_items_simplified(array_14, array_24))
