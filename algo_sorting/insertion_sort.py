@@ -1,4 +1,7 @@
 def insert_last_as_sorted(array):
+    # should have used splice method
+    # TODO: Check splice for python list
+
     # Could do binary search instead, but keep linear search for simplicity
     if len(array) <= 1:
         return array
@@ -20,6 +23,8 @@ def insert_last_as_sorted_by_ref(array, end_index):
     for i in reversed(range(end_index - 1)):
         if element_to_insert < array[i]:
             array[i + 1], array[i] = array[i], array[i + 1]
+        else:
+            break
 
     return array
 
