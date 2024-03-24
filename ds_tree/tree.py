@@ -1,6 +1,7 @@
 import json
 from collections import namedtuple
 
+
 class Node:
     def __init__(self, value):
         self.left = None
@@ -9,6 +10,7 @@ class Node:
 
     def __str__(self):
         return f"value: {self.value}; left: {self.left}; right: {self.right}"
+
 
 NodeWithParent = namedtuple("NodeWithParent", "node parent")
 
@@ -116,6 +118,72 @@ class BinarySearchTree:
         if remove_node.right != swap_node:
             swap_node.right = remove_node.right
         swap_node.left = remove_node.left
+
+    def bfs_recursive(self, queue, traversal_result) -> []:
+
+        if len(queue) == 0:
+            return traversal_result
+
+        current_node = queue.pop(0)
+
+        traversal_result.append(current_node.value)
+
+        if current_node.left is not None:
+            queue.append(current_node.left)
+
+        if current_node.right is not None:
+            queue.append(current_node.right)
+
+        return self.bfs_recursive(queue, traversal_result)
+
+    def bfs(self) -> []:
+        # Normally implemented as non recursive function
+        traversal_result = []
+        queue = [self.root]
+        return self.bfs_recursive(queue, traversal_result)
+
+    def _dfs_in_order_traverse(self, node, traversal_result) -> []:
+        if node.left is not None:
+            self._dfs_in_order_traverse(node.left, traversal_result)
+
+        traversal_result.append(node.value)
+
+        if node.right is not None:
+            self._dfs_in_order_traverse(node.right, traversal_result)
+
+        return traversal_result
+
+    def dfs_in_order(self) -> []:
+        return self._dfs_in_order_traverse(self.root, [])
+
+    def _dfs_pre_order_traverse(self, node, traversal_result) -> []:
+        traversal_result.append(node.value)
+
+        if node.left is not None:
+            self._dfs_pre_order_traverse(node.left, traversal_result)
+
+        if node.right is not None:
+            self._dfs_pre_order_traverse(node.right, traversal_result)
+
+        return traversal_result
+
+    def dfs_pre_order(self) -> []:
+        return self._dfs_pre_order_traverse(self.root, [])
+
+    def _dfs_post_order_traverse(self, node, traversal_result) -> []:
+
+        if node.left is not None:
+            self._dfs_post_order_traverse(node.left, traversal_result)
+
+        if node.right is not None:
+            self._dfs_post_order_traverse(node.right, traversal_result)
+
+        traversal_result.append(node.value)
+
+        return traversal_result
+
+    def dfs_post_order(self) -> []:
+        return self._dfs_post_order_traverse(self.root, [])
 
 
 def traverse(node):

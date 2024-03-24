@@ -1,0 +1,33 @@
+//If you know a solution is not far from the root of the tree:
+BFS
+
+//If the tree is very deep and solutions are rare:
+BFS
+DFS will take long time with deep tree, i.e. slower
+
+//If the tree is very wide:
+DFS
+BFS will use too much memory
+
+//If solutions are frequent but located deep in the tree:
+DFS
+
+//Determining whether a path exists between two nodes:
+DFS
+This is what DFS is built for, we are traversing the paths between nodes
+
+//Finding the shortest path:
+BFS
+This is what BFS is built for, see how may layers there are between two nodes
+For trees searching through the closest nodes first
+
+
+BFS
+Shortest Path
+Searching closest nodes first
+Consumes more memory than DFS
+
+DFS
+Answers the question if a path exists
+Consumes less memory than BFS
+Can get slow
