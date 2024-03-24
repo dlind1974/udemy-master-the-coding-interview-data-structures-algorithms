@@ -1,0 +1,49 @@
+// #1 - Sort 10 schools around your house by distance:
+Insertion Sort: Ideal for small datasets; efficient and simple.
+
+OK
+
+// #2 - eBay sorts listings by the current Bid amount:
+Merge sort. Risk that data is not enough random to make Quick Sort efficient.
+Predictable time and space complexity.
+Suitable for large datasets.
+
+Educator answer;
+radix or counting sort suggested by educator => numbers within a certain range
+
+// #3 - Sport scores on ESPN:
+Quick sort. Data should be even distributed and provide good pivots. Then both time and space efficient.
+
+OK
+
+// #4 - Massive database (can't fit all into memory) needs to sort through past year's user data:
+Merge sort. Since I can work with divided parts of the data it would be possible to swap in and out of memory from disk.
+Handles large datasets well; suitable for external sorting.
+
+OK
+
+// #5 - Almost sorted Udemy review data needs to update and add 2 new reviews:
+Insertion sort. In bidding the bids comes after another and is most likely close to sorted.
+
+OK
+
+// #6 - Temperature Records for the past 50 years in Canada:
+My wrong anwer...
+Quick sort. Efficient for large, random datasets.
+
+Educator answer:
+Radix counting sort
+Quick sort
+
+// #7 - Large user name database needs to be sorted. Data is very random:
+Quick sort. Good random distribution makes quick sort be fast due to high probability of picking good pivot elements.
+
+Educator:
+Merge sort
+Quick sort => if save memory space
+
+// #8 - You want to teach sorting for the first time:
+Bubble sort, simple to implement and understand. Not effecient for big datasets.
+Bubble Sort and Selection sort not likely to be used for anything other than education
+
+Remember: https://www.bigocheatsheet.com
