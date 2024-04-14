@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)  # Ensure minimum version for GoogleTest
 
 # Set the project name and specify the C++ standard
-project(ReverseStringProject VERSION 1.0 DESCRIPTION "Interview Test Suite" LANGUAGES CXX)
+project(InterviewQuestionsCpp VERSION 1.0 DESCRIPTION "Interview Test Suite" LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 

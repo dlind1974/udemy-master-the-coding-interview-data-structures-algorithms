@@ -44,11 +44,11 @@ if __name__ == '__main__':
     print(s)
 
     s = ["H", "a", "n", "n", "a", "h"]
-    reverse_string(s)
+    reverse_string_improved(s)
     print(s)
 
     s = ["h", "e", "l", "l"]
-    reverse_string(s)
+    reverse_string_improved(s)
     print(s)
 
 
