@@ -28,7 +28,8 @@ file(GLOB TEST_SOURCES
      "amazon-interview-questions/*.cpp")
 
 # Define the test executable using the collected source files
-add_executable(interview_test ${TEST_SOURCES})
+add_executable(interview_test ${TEST_SOURCES}
+        google-interview-questions/MergeIntervals.cpp)
 
 # Link GoogleTest libraries to the test executable
 target_link_libraries(interview_test gtest_main)
