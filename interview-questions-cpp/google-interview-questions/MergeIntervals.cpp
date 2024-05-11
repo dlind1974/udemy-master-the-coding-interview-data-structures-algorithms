@@ -62,12 +62,6 @@ vector<vector<int>> merge(vector<vector<int>> &intervals) {
   return result;
 }
 
-// Solution NOT using initial sorting of intervals
-vector<vector<int>> merge2(vector<vector<int>> &intervals) {
-
-}
-
-
 } // namespace
 
 TEST(MergeIntervals, Example1) {
