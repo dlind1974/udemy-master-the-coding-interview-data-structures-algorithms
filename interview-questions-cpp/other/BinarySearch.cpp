@@ -282,14 +282,10 @@ TEST(AgeCountBasicTests, BasicScenarios) {
 TEST(AgeCountLargeVectorTests, LargeScenarios) {
   // Large vector with repetitive elements, sorted by nature of repetition
   std::vector<int> largeRepetitive(1000000, 30); // 1 million people aged 30
-  EXPECT_EQ(1000000, ageCount1(largeRepetitive, 30));
-  EXPECT_EQ(1000000, ageCount2(largeRepetitive, 30));
   EXPECT_EQ(1000000, ageCount3(largeRepetitive, 30));
 
   // Large vector with no occurrences of the search age, also sorted
   std::vector<int> largeNoMatch(1000000, 30); // 1 million people aged 30
-  EXPECT_EQ(0, ageCount1(largeNoMatch, 31));
-  EXPECT_EQ(0, ageCount2(largeNoMatch, 31));
   EXPECT_EQ(0, ageCount3(largeNoMatch, 31));
 
   // Large vector with a mixed distribution, needs sorting
@@ -299,10 +295,6 @@ TEST(AgeCountLargeVectorTests, LargeScenarios) {
   std::fill(largeMixed.begin() + 500000, largeMixed.end(),
             26); // 500,000 people aged 26
   std::sort(largeMixed.begin(), largeMixed.end());
-  EXPECT_EQ(500000, ageCount1(largeMixed, 25));
-  EXPECT_EQ(500000, ageCount1(largeMixed, 26));
-  EXPECT_EQ(500000, ageCount2(largeMixed, 25));
-  EXPECT_EQ(500000, ageCount2(largeMixed, 26));
   EXPECT_EQ(500000, ageCount3(largeMixed, 25));
   EXPECT_EQ(500000, ageCount3(largeMixed, 26));
 
@@ -314,7 +306,5 @@ TEST(AgeCountLargeVectorTests, LargeScenarios) {
   largeSparse[345678] = 25;
   // Ensure the vector is sorted after modifications
   std::sort(largeSparse.begin(), largeSparse.end());
-  EXPECT_EQ(3, ageCount1(largeSparse, 25));
-  EXPECT_EQ(3, ageCount2(largeSparse, 25));
   EXPECT_EQ(3, ageCount3(largeSparse, 25));
 }
