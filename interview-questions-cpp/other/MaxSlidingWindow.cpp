@@ -27,7 +27,6 @@
 // Largest element index should be at the top of the queue
 // Ensure that the largest element's index is always at the front of the deque.
 // Removing indices from the front if they are out of the bounds => keep on removing until in bounds
-// Use a priority queue in order to have largest element on top
 
 #include <gtest/gtest.h>
 #include <vector>
@@ -102,8 +101,6 @@ public:
     return result;
   }
 };
-
-
 
 } // namespace
 
