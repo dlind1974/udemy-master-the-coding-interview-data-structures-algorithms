@@ -31,7 +31,8 @@ file(GLOB TEST_SOURCES
 add_executable(interview_test ${TEST_SOURCES}
         google-interview-questions/MergeIntervals.cpp
         other/BinarySearch.cpp
-        google-interview-questions/MinStack.cpp)
+        google-interview-questions/MinStack.cpp
+        other/MaxSlidingWindow.cpp)
 
 # Link GoogleTest libraries to the test executable
 target_link_libraries(interview_test gtest_main)
